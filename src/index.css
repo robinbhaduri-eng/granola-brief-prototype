@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+
+  --oats-border-focus: #b2c24899;
+  --oats-border-hairline: #47432a33;
+  --oats-fill-accent: #5b6f00;
+  --oats-fill-accent-highlight: #788c1526;
+  --oats-fill-accent-highlight-strong: #5b6f0033;
+  --oats-fill-accent-hover: #4c5616;
+  --oats-fill-highlight: #625a220f;
+  --oats-fill-highlight-strong: #56512e1f;
+  --oats-fill-input: #ffffff;
+  --oats-ink-accent: #788c15;
+  --oats-ink-accent-strong: #5b6f00;
+  --oats-ink-primary: #292929;
+  --oats-ink-primary-inverse: #fcfcf8;
+  --oats-ink-secondary: #72726e;
+  --oats-ink-secondary-strong: #4e4d4b;
+  --oats-ink-tertiary: #acada8;
+  --oats-surface: #f7f7f2;
+  --oats-surface-elevated: #ffffff;
+  --oats-surface-raised: #ffffff;
+  --oats-surface-sunken: #f2f2ec;
+  --oats-surface-tint-accent: #e5eacd;
+  --oats-surface-tint-neutral: #625a220f;
+
+  --color-background-window: var(--oats-surface);
+  --color-background-elevated: var(--oats-surface-elevated);
+  --color-background-sunken: var(--oats-surface-sunken);
+  --color-background-accent: var(--oats-fill-accent-highlight);
+  --color-foreground-strong: #1c1c1e;
+  --color-foreground-primary: var(--oats-ink-primary);
+  --color-foreground-secondary: var(--oats-ink-secondary);
+  --color-foreground-tertiary: var(--oats-ink-tertiary);
+  --color-foreground-accent: var(--oats-ink-accent);
+  --color-foreground-accent-strong: var(--oats-ink-accent-strong);
+  --color-border-primary: var(--oats-border-hairline);
+  --color-highlight-faint: var(--oats-fill-highlight);
+  --color-highlight-strong: var(--oats-fill-highlight-strong);
+
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+    Georgia, serif;
+
+  --shadow-subtle:
+    0 1px 1px rgba(71, 67, 42, 0.02),
+    0 8px 20px rgba(71, 67, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --shadow-window:
+    0 10px 28px rgba(71, 67, 42, 0.08),
+    0 3px 10px rgba(71, 67, 42, 0.04);
+  --shadow-floating:
+    0 24px 48px rgba(71, 67, 42, 0.12),
+    0 10px 22px rgba(71, 67, 42, 0.08);
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: var(--color-background-window);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-background-window);
+  color: var(--color-foreground-primary);
+  font-family: var(--font-body);
+  caret-color: var(--oats-ink-primary);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-color: var(--oats-border-hairline);
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+:hover {
+  scrollbar-color: rgba(71, 67, 42, 0.2) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background: rgba(71, 67, 42, 0.2);
+}
+
+::selection {
+  background-color: #47432a33;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+@keyframes granolaShimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: -100% 50%;
+  }
+}
+
+.granola-shimmer-text {
+  color: transparent;
+  background-image: linear-gradient(
+    92deg,
+    rgba(114, 114, 110, 0.35) 0%,
+    rgba(114, 114, 110, 0.9) 45%,
+    rgba(114, 114, 110, 0.35) 100%
+  );
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: granolaShimmer 1.9s linear infinite;
+}
