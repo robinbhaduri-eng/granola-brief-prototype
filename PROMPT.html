@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Build Prompt — Brief prototype (for Cursor)</title>
+<style>
+  :root {
+    --bg: #FAF8F3;
+    --bg-elevated: #FFFFFF;
+    --fg: #1A1814;
+    --fg-secondary: #5F5B53;
+    --fg-tertiary: #908B82;
+    --border: #E8E4DC;
+    --border-soft: #F0ECE4;
+    --accent: #1F2A22;
+    --accent-soft: #EEF1ED;
+    --code-bg: #F2EFE8;
+    --warning-bg: #FBF1DE;
+    --warning-fg: #6B5320;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Söhne", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    padding: 64px 24px 140px;
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  .doc { max-width: 760px; margin: 0 auto; }
+  .meta { color: var(--fg-tertiary); font-size: 13px; line-height: 1.5; margin-bottom: 28px; }
+  .meta strong { color: var(--fg-secondary); font-weight: 500; }
+  h1 { font-size: 28px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 14px; font-weight: 600; }
+  h2 {
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    margin: 48px 0 14px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--fg-secondary);
+    margin: 22px 0 8px;
+    font-weight: 600;
+  }
+  p { margin: 0 0 12px; }
+  strong { font-weight: 600; color: var(--fg); }
+  em { font-style: italic; }
+  ul, ol { padding-left: 22px; margin: 0 0 12px; }
+  li { margin: 5px 0; }
+  blockquote {
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 18px;
+    margin: 12px 0;
+    color: var(--fg-secondary);
+    font-style: italic;
+  }
+  code {
+    background: var(--code-bg);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 14px 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 12px 0 18px;
+  }
+  pre code { background: transparent; padding: 0; border-radius: 0; font-size: inherit; }
+  .callout {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin: 16px 0;
+    font-size: 14.5px;
+    color: var(--fg-secondary);
+  }
+  .callout strong { color: var(--fg); }
+  .warning {
+    background: var(--warning-bg);
+    border: 1px solid #E8D5A8;
+    color: var(--warning-fg);
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin: 16px 0;
+    font-size: 14.5px;
+  }
+  .warning strong { color: #4A380E; }
+  .copy-block {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin: 18px 0 28px;
+  }
+  .copy-block .label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-tertiary);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0 22px;
+    font-size: 14.5px;
+  }
+  th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+    color: var(--fg-secondary);
+    border-bottom: 1px solid var(--accent);
+    font-size: 13px;
+  }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 32px 0; }
+  @media print {
+    body { padding: 40px; background: white; }
+    h2 { page-break-after: avoid; }
+    pre, blockquote, table, .copy-block { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+<h1>Build Prompt — Brief prototype</h1>
+<div class="meta">
+  Optimized for <strong>Cursor</strong> (Composer mode, Claude or GPT-5 as the underlying model). Works in Claude Code or Codex with minor adjustment.<br />
+  <strong>Companion doc:</strong> <code>BRIEF.html</code> (the product brief — read it first).<br />
+  <strong>Date:</strong> 2026-05-18
+</div>
+
+<div class="warning">
+  <strong>Before you run this prompt:</strong> drop 4–6 Granola screenshots into <code>./references/</code>. Without them, the prototype will improvise the visual language and fail. See Section 3 for what to capture.
+</div>
+
+<h2>1. How to use this document</h2>
+<p>Open the existing repo at <code>/Users/bhad/Documents/Cursor/Granola proto/</code> in Cursor. Open Composer (Cmd+I). Paste the prompt in Section 9 below. Reference <code>BRIEF.html</code> and the <code>references/</code> folder in your Composer context.</p>
+<p>The remainder of this document is the prompt itself, structured. Section 9 is a copy-pasteable consolidated version.</p>
+
+<h2>2. Read first (in this order)</h2>
+<ol>
+  <li><code>BRIEF.html</code> — the full product brief. Read end-to-end. Sections <strong>12 (Visual fidelity)</strong>, <strong>13 (Principles)</strong>, and <strong>15 (Demo flow)</strong> are non-negotiable constraints.</li>
+  <li>Every image in <code>./references/</code> — these are the source of truth for color, type, spacing, and density. Do not improvise the visual language from training data.</li>
+</ol>
+<p>If <code>./references/</code> is empty when you start, <strong>stop and ask before building any UI</strong>. This is the single most important rule in this prompt.</p>
+
+<h2>3. Screenshots to capture (drop into <code>./references/</code>)</h2>
+<ul>
+  <li><code>01_sidebar.png</code> — Granola's left sidebar with the meetings list visible (today + recent days).</li>
+  <li><code>02_meeting_note.png</code> — a meeting note open in the main canvas, mid-recording or post-recording.</li>
+  <li><code>03_upcoming_empty.png</code> — an upcoming meeting selected, showing today's empty / ready-to-record state in the main canvas. <strong>This is the surface we're replacing — most important screenshot.</strong></li>
+  <li><code>04_recording_notification.png</code> — Granola's recording-start notification when a meeting begins (Zoom/Meet detected). <strong>This is the surface we extend in Beat 2 of the arc.</strong></li>
+  <li><code>05_chat.png</code> — Granola Chat in use (for general visual tone reference, not because we're building chat).</li>
+  <li><em>(Optional)</em> <code>06_note_bullet.png</code> — close-up of a bullet in a Granola note (for the pinned-bullet styling in Beat 3).</li>
+</ul>
+
+<h2>4. Stack</h2>
+<p>Match the existing repo (already configured):</p>
+<ul>
+  <li>React 18 + TypeScript</li>
+  <li>Vite</li>
+  <li>Tailwind v4 (CSS variables in <code>src/index.css</code> — extend; if they disagree with the screenshots, the screenshots win and you should update the tokens)</li>
+  <li>Framer Motion for the small number of transitions</li>
+</ul>
+<p>Confirm <code>npm install &amp;&amp; npm run dev</code> boots the existing dashcam prototype before you start. Do not break it.</p>
+
+<h2>5. What to build</h2>
+<p>A single new demo route inside the existing app, switchable by URL (<code>/?demo=brief</code>), delivering the demo flow in Section 15 of <code>BRIEF.html</code>. Three meetings in the sidebar; one full three-beat arc; two additional briefs to show portfolio breadth.</p>
+
+<h3>Component structure</h3>
+<pre><code>src/components/brief/
+  BriefCanvas.tsx              // replaces the empty meeting-state in the main canvas
+  TheRoom.tsx                  // attendees, one line each
+  Insight.tsx                  // the one surfaced insight, with inline actions
+  RevealExpand.tsx             // inline 3-line summary + "Open full note →" link
+  RecordingNotification.tsx    // Beat 2 — mock of Granola's notification with "bring up" copy
+  PinnedBullet.tsx             // Beat 3 — the pinned bullet at the top of the meeting note
+  MeetingNoteMock.tsx          // minimal mock of an in-meeting note (host for PinnedBullet)
+  briefFixtures.ts             // static data for the three demo meetings</code></pre>
+
+<h3>Fixture data</h3>
+<p>Three upcoming meetings, one insight per meeting. Each insight matches its category exactly as written in <code>BRIEF.html</code> Section 15.</p>
+<ul>
+  <li><strong>Meeting 1 — Weekly 1:1 with Sarah Chen</strong> (in 10 min). Insight category <strong>A</strong>. Full three-beat arc demoed here.</li>
+  <li><strong>Meeting 2 — Pricing strategy review</strong> (in 30 min). Insight category <strong>B</strong>. Brief surface only.</li>
+  <li><strong>Meeting 3 — Roadmap sync</strong> (in 1 hour). Insight category <strong>E</strong>. Brief surface only.</li>
+</ul>
+<p>Three other "past meetings" in the sidebar for visual context. Not clickable to anything useful — they're just there so the sidebar looks lived-in.</p>
+
+<h2>6. The demo flow (this is the only path that must work end-to-end)</h2>
+<p>Exact steps from <code>BRIEF.html</code> Section 15. Reproduced here for convenience:</p>
+<ol>
+  <li>User clicks <strong>Sarah 1:1</strong>. Brief renders in the main canvas — the room + insight A + two inline actions.</li>
+  <li>User clicks <em>"Show what shifted"</em>. Inline expand reveals a 3-line summary citing two source meetings, with an <em>"Open full note →"</em> link.</li>
+  <li>User clicks <em>"Bring this up"</em>. Button state changes; quiet inline confirmation: <em>"Saved to your Sarah brief."</em></li>
+  <li>User clicks a small <strong>"Start recording (demo)"</strong> affordance. The recording notification appears in the corner: <em>"Recording started — bring up: Q3 launch assumptions"</em>. Match the visual style of <code>04_recording_notification.png</code> exactly; change only the copy.</li>
+  <li>The main canvas transitions from the Brief to the meeting note. The pinned bullet sits at the top: <em>"Bring up: Q3 launch assumptions (two have shifted this week)"</em>, with the lightest possible marker indicating <em>from your brief</em>.</li>
+  <li>User clicks back to the sidebar. Clicks <strong>Pricing review</strong>. Brief renders with insight B. No further action needed — this demonstrates breadth.</li>
+  <li>User clicks <strong>Roadmap sync</strong>. Brief renders with insight E. Same — breadth demonstration only.</li>
+</ol>
+
+<h3>Interaction notes</h3>
+<ul>
+  <li>Transitions: fade or subtle slide, ~150ms. Nothing hard-cut. Nothing showy.</li>
+  <li>The "Start recording (demo)" button is a prototype-only affordance — in real Granola it would auto-trigger from Zoom detection. Style it minimally; don't make it look like part of the product.</li>
+  <li>The recording notification auto-dismisses after ~4 seconds, but the pinned bullet persists.</li>
+  <li>State management: a single React state machine for which meeting is selected + current beat. Keep it tiny; this is a demo.</li>
+</ul>
+
+<h2>7. Visual fidelity rules (override everything else)</h2>
+<ol>
+  <li>Color, type, spacing, radius come from <code>./references/</code>, not from training data and not from the existing dashcam prototype tokens (which are approximations). If they disagree, screenshots win and you should update <code>src/index.css</code>.</li>
+  <li>Density: Granola is spacious. If a surface feels dense, remove something.</li>
+  <li>The Brief should feel like a kind of note, not a separate UI primitive.</li>
+  <li>No badges. No status pills with bright fills. No colored indicators of any kind.</li>
+  <li>Shadows minimal. Hover states barely visible.</li>
+  <li>No data viz, no graphs, no charts, no scores, no confidence percentages.</li>
+  <li>The recording notification (Beat 2) must be visually indistinguishable from today's Granola recording notification except for the appended copy.</li>
+  <li>The pinned bullet (Beat 3) should read as a Granola note bullet with the lightest possible marker — a small inline label or a subtle accent in the left margin. Nothing more.</li>
+</ol>
+
+<h2>8. Voice &amp; tone rules</h2>
+<p>Every UI string must pass: <em>would a human assistant say this?</em></p>
+<ul>
+  <li>Use the exact copy from <code>BRIEF.html</code> sections 5 and 15 for the insight strings. Don't paraphrase.</li>
+  <li>Inline confirmations are short and human: <em>"Saved to your Sarah brief."</em> Not <em>"Item added successfully."</em></li>
+  <li>The "from your brief" marker is sentence-case lowercase: <em>from your brief</em>. Not <em>FROM YOUR BRIEF</em>, not <em>Brief Item</em>.</li>
+  <li>Button labels are verbs at the user level: <em>"Bring this up"</em>, <em>"Show what shifted"</em>, <em>"Ping Pat for a quick read"</em>. Never <em>"Submit"</em>, <em>"Apply"</em>, <em>"Confirm"</em>.</li>
+</ul>
+
+<h2>9. Out of scope (do not build, even if easy)</h2>
+<ul>
+  <li>Anything in <code>BRIEF.html</code> Section 16.</li>
+  <li>Categories C and D from the insight portfolio (documented for context, not demoed).</li>
+  <li>A sidebar tab for any new view.</li>
+  <li>A chat panel.</li>
+  <li>Real Zoom/Meet detection (the "Start recording (demo)" affordance is enough).</li>
+  <li>Settings, account, auth, admin.</li>
+  <li>More than the three demo meetings working.</li>
+  <li>Mobile / responsive below 1024px.</li>
+</ul>
+
+<h2>10. Acceptance criteria</h2>
+<ul>
+  <li>Running <code>npm run dev</code> and navigating to <code>/?demo=brief</code> loads the new flow without breaking the existing dashcam prototype.</li>
+  <li>All seven steps of Section 6 work end-to-end in a single uninterrupted demo run.</li>
+  <li>Visual fidelity passes the "is this Granola?" test against the screenshots in <code>./references/</code>.</li>
+  <li>The three-beat arc (Brief → notification → pinned bullet) carries the same insight content through all three surfaces.</li>
+  <li>All three insight categories (A, B, E) appear, with their exact copy from <code>BRIEF.html</code>.</li>
+  <li>Every UI string passes the voice test in Section 8.</li>
+  <li>Zero new pieces of chrome added to the app outside the demo route.</li>
+</ul>
+
+<h2>11. How to work (recommended sequence)</h2>
+<ol>
+  <li>Read <code>BRIEF.html</code> in full. Do not skim.</li>
+  <li>Open every image in <code>./references/</code>. Build an internal model of Granola's color palette, type scale, and spacing.</li>
+  <li>Update <code>src/index.css</code> CSS variables to match the screenshots. Show me the updated tokens before building anything else.</li>
+  <li>Build <code>BriefCanvas</code> + <code>TheRoom</code> + <code>Insight</code>. Wire to fixture data for Meeting 1 only. Show me. Visual fidelity gate happens here.</li>
+  <li>Build <code>RevealExpand</code> and the "Bring this up" interaction.</li>
+  <li>Build <code>RecordingNotification</code> and <code>PinnedBullet</code> + <code>MeetingNoteMock</code>. Wire the full Beat 2 → Beat 3 transition.</li>
+  <li>Add Meeting 2 and Meeting 3 with their respective insights. Verify breadth.</li>
+  <li>Self-review against acceptance criteria. List any criterion you didn't fully meet and why.</li>
+</ol>
+
+<p>If at any point you're tempted to add something not in the brief — <strong>don't. Ask first.</strong></p>
+
+<hr />
+
+<h2>12. Copy-paste version (for Cursor Composer)</h2>
+<p>Paste the block below into Cursor Composer. Add <code>BRIEF.html</code> and the entire <code>references/</code> folder to your Composer context first.</p>
+
+<div class="copy-block">
+<div class="label">PROMPT TO PASTE</div>
+<pre><code>You are building a high-fidelity prototype of a new Granola feature called "Brief" inside the existing Vite/React/TypeScript repo at /Users/bhad/Documents/Cursor/Granola proto/.
+
+Before writing any code:
+1. Read BRIEF.html in full. Sections 12 (Visual fidelity), 13 (Principles), and 15 (Demo flow) are non-negotiable.
+2. Examine every image in ./references/. These are the source of truth for color, typography, spacing, and density. Do not improvise the visual language from training data.
+3. If ./references/ is empty, STOP and ask me to provide Granola screenshots before continuing.
+
+Build a new demo route (/?demo=brief) that delivers the seven-step demo flow in BRIEF.html Section 15. Three meetings in the sidebar; one full three-beat arc (Brief → recording notification → pinned bullet in the meeting note); two additional briefs to demonstrate insight portfolio breadth.
+
+Stack matches the existing repo: React 18 + TypeScript + Vite + Tailwind v4 + Framer Motion. Update src/index.css CSS variables to match the screenshots — if the existing tokens disagree with what you see, the screenshots win.
+
+Component structure:
+  src/components/brief/
+    BriefCanvas.tsx, TheRoom.tsx, Insight.tsx, RevealExpand.tsx,
+    RecordingNotification.tsx, PinnedBullet.tsx, MeetingNoteMock.tsx,
+    briefFixtures.ts
+
+Insight content for the three demo meetings:
+  - Meeting 1 (Sarah 1:1, in 10 min)  — Category A: assumption shift on Q3 launch
+  - Meeting 2 (Pricing review, in 30 min) — Category B: Pat from infra has been raising this
+  - Meeting 3 (Roadmap sync, in 1 hour)   — Category E: Growth and Trust are diverging
+Use the exact copy from BRIEF.html Section 5 and Section 15 — do not paraphrase.
+
+Two micro-action lanes only:
+  - Reveal ("Show me X") → inline expand with a 3-line summary; includes "Open full note →" link.
+  - Prep ("Bring this up") → drops a pinned bullet at the top of the meeting note, AND causes the recording notification (Beat 2) to carry "Bring up: X" copy when the meeting starts.
+
+For Meeting 2 only: include a secondary "Ping Pat for a quick read" action that drafts a short message in a quiet modal — never sends.
+
+Out of scope (do not build): any of BRIEF.html Section 16, categories C and D, a sidebar tab, a chat panel, real Zoom detection, settings, auth, more than three meetings.
+
+Recommended sequence:
+  1. Read BRIEF.html.
+  2. Examine references.
+  3. Update src/index.css tokens to match screenshots. Show me.
+  4. Build BriefCanvas + TheRoom + Insight for Meeting 1. Show me — visual fidelity gate.
+  5. Wire RevealExpand and Bring-this-up.
+  6. Build RecordingNotification, PinnedBullet, MeetingNoteMock. Wire the full arc.
+  7. Add Meeting 2 and Meeting 3.
+  8. Self-review against acceptance criteria in BRIEF.html Section 17.
+
+If tempted to add anything not in the brief — don't, ask first.</code></pre>
+</div>
+
+</div>
+</body>
+</html>

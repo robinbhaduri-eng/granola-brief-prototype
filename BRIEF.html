@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brief — Product Brief</title>
+<style>
+  :root {
+    --bg: #FAF8F3;
+    --bg-elevated: #FFFFFF;
+    --fg: #1A1814;
+    --fg-secondary: #5F5B53;
+    --fg-tertiary: #908B82;
+    --border: #E8E4DC;
+    --border-soft: #F0ECE4;
+    --accent: #1F2A22;
+    --accent-soft: #EEF1ED;
+    --code-bg: #F2EFE8;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Söhne", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    padding: 64px 24px 140px;
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  .doc { max-width: 720px; margin: 0 auto; }
+  .meta {
+    color: var(--fg-tertiary);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+  .meta strong { color: var(--fg-secondary); font-weight: 500; }
+  h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    margin: 56px 0 14px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    font-weight: 600;
+  }
+  h2 .num {
+    color: var(--fg-tertiary);
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  h3 {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--fg-secondary);
+    margin: 24px 0 8px;
+    font-weight: 600;
+  }
+  p { margin: 0 0 14px; }
+  strong { font-weight: 600; color: var(--fg); }
+  em { font-style: italic; }
+  ul, ol { padding-left: 22px; margin: 0 0 14px; }
+  li { margin: 6px 0; }
+  blockquote {
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 18px;
+    margin: 14px 0;
+    color: var(--fg-secondary);
+    font-style: italic;
+  }
+  blockquote p { margin: 4px 0; }
+  blockquote strong { color: var(--fg-secondary); }
+  code {
+    background: var(--code-bg);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 14px 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 14px 0 18px;
+  }
+  pre code { background: transparent; padding: 0; border-radius: 0; font-size: inherit; }
+  .callout {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin: 18px 0;
+    font-size: 14.5px;
+    color: var(--fg-secondary);
+  }
+  .callout strong { color: var(--fg); }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 14px 0 22px;
+    font-size: 14.5px;
+  }
+  th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+    color: var(--fg-secondary);
+    border-bottom: 1px solid var(--accent);
+    font-size: 13px;
+    letter-spacing: 0.01em;
+  }
+  td .label {
+    display: inline-block;
+    padding: 1px 8px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 36px 0; }
+  @media print {
+    body { padding: 40px; background: white; }
+    h2 { page-break-after: avoid; }
+    pre, blockquote, table { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+<h1>Brief — Product Brief</h1>
+<div class="meta">
+  A working brief for building a prototype of a new Granola feature.<br />
+  <strong>Reader:</strong> the engineer or AI agent who will build the demo.<br />
+  <strong>Date:</strong> 2026-05-18 · <strong>Status:</strong> v2 (simplified, portfolio-based)
+</div>
+
+<div class="callout">
+  <strong>Working name:</strong> <em>Brief.</em> The feature might not need a name at all in product — it could simply be what Granola shows you before a meeting.
+</div>
+
+<h2><span class="num">1.</span>What it is, in one sentence</h2>
+<p>Before a meeting starts, Granola surfaces <em>one thing worth knowing</em> — drawn from every meeting in the org that led up to this one — and lets you carry it into the meeting with one click.</p>
+
+<h2><span class="num">2.</span>What it isn't</h2>
+<p>Not a new tab. Not a new section of the app. Not a chat feature. Not a popup. Not a setting. Not a dashboard of insights. Not something the user has to find, opt into, or configure.</p>
+
+<h2><span class="num">3.</span>The insertion point (one place, no new IA)</h2>
+<p>Today, when you click an upcoming meeting in Granola, the main canvas shows the meeting title and a "ready to record" empty state. <strong>We replace that empty state with the brief.</strong></p>
+<p>That's the entire surface. No sidebar changes. No menu additions. No icons in the chrome.</p>
+
+<h2><span class="num">4.</span>What the brief contains</h2>
+<p>Two parts, in this order:</p>
+
+<h3>The room (always shown)</h3>
+<p>1–2 lines per attendee. Role · recency · the single most relevant open thread (if any).</p>
+<blockquote><strong>Sarah Chen</strong> — Head of Product · last met Tuesday · you owe her the Q2 numbers</blockquote>
+
+<h3>The insight (only when there's something worth saying)</h3>
+<p>One org-knowledge insight, drawn from a portfolio of types Granola can surface (Section 5). With one or two micro-actions inline.</p>
+<p>If Granola has nothing worth saying for a given meeting, only "the room" renders. Most meetings will be quiet. The ones with insight will be unmissable.</p>
+<p>This is the deliberate design bet: <strong>quiet over comprehensive.</strong> A meeting brief that's always full of "insights" trains the user to ignore it. A brief that's quiet 70% of the time and lands hard 30% of the time becomes something they actually read.</p>
+
+<h2><span class="num">5.</span>The insight portfolio</h2>
+<p>Granola picks <em>one</em> insight per meeting from five categories. Each demonstrates a distinct facet of org knowledge that only meeting data can produce.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 22%">Category</th>
+      <th style="width: 38%">Example</th>
+      <th>What it proves only Granola can know</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="label">A</span><br /><strong>What changed since this was scheduled</strong></td>
+      <td><em>"Two assumptions behind your Q3 launch date have shifted this week — eng capacity dropped to 1, and the customer fix landed Tuesday."</em></td>
+      <td>Granola tracks decisions across time, not just at the moment of decision.</td>
+    </tr>
+    <tr>
+      <td><span class="label">B</span><br /><strong>Who else cares about this</strong></td>
+      <td><em>"Pat from infra has been raising your exact concern in 6 prior meetings. They're not on this invite."</em></td>
+      <td>Granola maps real expertise — the org chart hides this; meetings reveal it.</td>
+    </tr>
+    <tr>
+      <td><span class="label">C</span><br /><strong>What they've been carrying</strong></td>
+      <td><em>"Adam has raised hiring scope frustration in 4 of his last 5 meetings. Likely to come up."</em></td>
+      <td>Granola sees patterns across one person's meetings you weren't in.</td>
+    </tr>
+    <tr>
+      <td><span class="label">D</span><br /><strong>Open loops between you two</strong></td>
+      <td><em>"Sarah asked you for the customer retention breakdown in your last 1:1. Status: not yet sent."</em></td>
+      <td>Granola hears commitments both directions — including the ones never docs'd.</td>
+    </tr>
+    <tr>
+      <td><span class="label">E</span><br /><strong>Where the org is diverging</strong></td>
+      <td><em>"Growth and Trust have both been discussing this feature this month — Growth treats it as retention; Trust treats it as safety. They haven't connected."</em></td>
+      <td>Granola is the only tool in every room — sees parallel meetings going different directions.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The wow isn't any single category. The wow is that <strong>Granola picks the right one for this meeting</strong>. Sometimes it's a 1:1 and Granola surfaces an open loop. Sometimes it's a pricing review and Granola surfaces a divergence. The variety <em>is</em> the demonstration of org understanding.</p>
+
+<h2><span class="num">6.</span>Micro-actions (two lanes only)</h2>
+
+<h3>Reveal — "Show me…"</h3>
+<p>Inline expands a 3-line summary in place. Inside the expanded summary, a quiet link: <em>"Open full note →"</em> for users who want to go deeper. Keeps the user in the prep flow by default; never navigates away unless they ask.</p>
+
+<h3>Prep — "Bring this up"</h3>
+<p>One-click drops a pinned bullet at the top of the meeting note, marked as <em>from your brief</em>. The bullet stays pinned for the duration of the meeting.</p>
+<p>Critically, the same one-click action carries through three beats — see Section 8 (The full arc).</p>
+
+<h3>What we deliberately avoided</h3>
+<ul>
+  <li><strong>Calendar moves</strong> (adding people to invites) — last-minute adds are socially expensive.</li>
+  <li><strong>Auto-sends of any kind</strong> — drafts must always be reviewed before they leave Granola.</li>
+  <li><strong>Editing other people's meetings or agendas</strong> — implies access we don't have.</li>
+  <li><strong>"Take action for me" automation</strong> — violates the augment-judgment principle.</li>
+</ul>
+
+<h2><span class="num">7.</span>Light outreach (one exception)</h2>
+<p>For category <strong>B</strong> (Who else cares) only: a secondary action — <em>"Ping Pat for a quick read"</em> — drafts a short message in your voice. <strong>Drafts, never sends.</strong> The user sees the draft, can edit, and sends manually. This is the only Brief action that touches the outside world, and even then only as a draft.</p>
+
+<h2><span class="num">8.</span>The full arc — one click, three beats</h2>
+<p>The Brief isn't a one-moment feature. The "Bring this up" action carries the same insight through the entire meeting lifecycle:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 18%">Beat</th>
+      <th style="width: 22%">When</th>
+      <th>What the user sees</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Prep</strong></td>
+      <td>Click upcoming meeting</td>
+      <td>The Brief appears in the meeting canvas. User clicks <em>"Bring this up"</em>.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Reminder</strong></td>
+      <td>Meeting starts (Zoom/Meet detected)</td>
+      <td>Granola's existing recording notification surfaces the bullet as a reminder: <em>"Bring up: [X]"</em>. Reuses existing notification chrome — no new surface.</td>
+    </tr>
+    <tr>
+      <td><strong>3. In-meeting</strong></td>
+      <td>Note opens during recording</td>
+      <td>The bullet sits pinned at the top of the note, marked <em>from your brief</em>, ready to reference mid-conversation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The same insight, the same action, three places it shows up. This is the moment the prototype proves the Brief isn't a passive sidebar — it's a feature that follows you into the room.</p>
+
+<h2><span class="num">9.</span>The hero moment</h2>
+<blockquote>"Click an upcoming meeting. Granola hands you one thing no other tool could know. One click carries it through the meeting — reminder when you join the call, pinned at the top of the note when you're in it."</blockquote>
+<p>This is the demo sentence. The pitch to Chris. The marketing line.</p>
+
+<h2><span class="num">10.</span>Why this — not three modules, not a sidebar tab</h2>
+<p>The previous iteration of this brief had three always-on modules and a new sidebar tab. We dropped both because they violated the same principle in different ways: they made the user <em>look for</em> the org intelligence Granola has. The Brief flips that — it surfaces one load-bearing thing at the moment the user needs it, then gets out of the way. Most meetings won't have a hero insight, and that's the point. When one appears, it lands.</p>
+
+<h2><span class="num">11.</span>Voice &amp; tone</h2>
+<p>Granola's voice: human, terse, slightly understated. The Brief must inherit it.</p>
+<ul>
+  <li>"You owe Sarah Q2 numbers" — not "Outstanding action item."</li>
+  <li>"Pricing v3 now hinges on legal" — not "Update: pricing v3 status changed."</li>
+  <li>"Pat has raised this in 6 prior meetings" — not "Insight: matching expertise detected."</li>
+  <li>"You weren't there" — directly, no hedging.</li>
+  <li>"Bring this up" — not "Add to agenda items."</li>
+</ul>
+<p>Sentence case in UI copy. Never enthusiastic punctuation. If a line reads like a SaaS product, rewrite it.</p>
+
+<h2><span class="num">12.</span>Visual fidelity (non-negotiable)</h2>
+<p>The previous mock failed because it improvised Granola's visual language from memory. Don't repeat that.</p>
+<ul>
+  <li><strong>Source of truth:</strong> real Granola screenshots in <code>/references/</code>. If the folder is empty when you start, <strong>stop and ask before building any UI</strong>.</li>
+  <li><strong>Hierarchy:</strong> the note/editor surface is the hero of Granola. The Brief replaces the <em>empty state of that surface</em>, so it must inherit the same visual register — sparse, paper-feel, warm. Not a dashboard. Not a card-heavy interface.</li>
+  <li><strong>Density:</strong> Granola is spacious. The Brief is two parts (the room + maybe an insight). Lots of breathing room. No badges, no status pills.</li>
+  <li><strong>Color:</strong> warm off-white background, near-black text, a single muted accent used very sparingly.</li>
+  <li><strong>Typography:</strong> match Granola's actual scale from screenshots. Match the existing app, don't invent a new system.</li>
+  <li><strong>Layout:</strong> vertical stack, single column, width matches the existing note column. The Brief should feel like a <em>kind of note</em>, not a separate UI primitive.</li>
+  <li><strong>Recording notification (Beat 2):</strong> reuse Granola's existing recording-start notification visual. Only the copy changes — the chrome must be identical to today's Granola.</li>
+  <li><strong>Pinned bullet (Beat 3):</strong> the bullet at the top of the note should feel like a Granola note bullet, with the lightest possible mark to indicate <em>from your brief</em> — a small label or a subtle accent in the left margin, nothing more.</li>
+</ul>
+
+<h2><span class="num">13.</span>Principles</h2>
+<ol>
+  <li><strong>The Brief is for the moment before the meeting.</strong> The "Bring this up" follow-through extends into the meeting only because the same one-click decision is already made.</li>
+  <li><strong>Quiet over comprehensive.</strong> No insight is better than a weak insight. Empty Brief is a feature, not a bug.</li>
+  <li><strong>The graph is invisible.</strong> Surface answers, not structures. Never show people-clusters, networks, scores, or confidence percentages.</li>
+  <li><strong>Augment judgment; never auto-execute.</strong> Every action requires a click. No background sends.</li>
+  <li><strong>Every line of content is justified by data Granola actually has.</strong> No speculation, no soft predictions.</li>
+</ol>
+<p>When a design decision is ambiguous, the principle above wins.</p>
+
+<h2><span class="num">14.</span>Data sources</h2>
+<p>Everything the Brief shows must derive from data Granola already has access to:</p>
+<ul>
+  <li><strong>Calendar</strong> — attendees, recurring meeting context, time-since-last-meeting, upcoming meeting detection (Zoom/Meet).</li>
+  <li><strong>Transcripts</strong> — what was said in prior meetings with these people / on these topics.</li>
+  <li><strong>Other employees' meetings and calendars</strong> — for categories A, B, and E. This is Granola's structural advantage; the Brief leans on it.</li>
+  <li><strong>Your own edits and chat history</strong> — for category D (open loops).</li>
+</ul>
+<p>No external data sources. No CRM integration. No Slack scraping. No org chart import.</p>
+
+<h2><span class="num">15.</span>Demo flow (the only path the prototype must support)</h2>
+<p>Three upcoming meetings in the sidebar. The user explores them in this order:</p>
+
+<ol>
+  <li><strong>Click "Weekly 1:1 with Sarah Chen"</strong> (in 10 minutes). The Brief surfaces:
+    <ul>
+      <li>The room: Sarah Chen, one line of context.</li>
+      <li>Insight (category <strong>A</strong>): <em>"Two assumptions behind your Q3 launch date have shifted this week — eng capacity dropped to 1, and the customer fix landed Tuesday."</em></li>
+      <li>Inline actions: <em>"Show what shifted"</em> (reveal) and <em>"Bring this up"</em> (prep).</li>
+    </ul>
+  </li>
+  <li><strong>User clicks "Show what shifted"</strong> → inline expands a 3-line summary citing the two source meetings. Includes <em>"Open full note →"</em> link.</li>
+  <li><strong>User clicks "Bring this up"</strong> → button state changes to confirm; a quiet inline confirmation: <em>"Saved to your Sarah brief."</em></li>
+  <li><strong>Simulate meeting start.</strong> A "Start recording" affordance (or auto-trigger) fires. Granola's recording notification appears in the corner of the screen, copy: <em>"Recording started — bring up: Q3 launch assumptions"</em>. (Match the visual style of Granola's existing recording notification — see <code>/references/</code>.)</li>
+  <li><strong>The meeting note opens.</strong> The pinned bullet sits at the top: <em>"Bring up: Q3 launch assumptions (two have shifted this week)"</em>, marked subtly as <em>from your brief</em>.</li>
+  <li><strong>(Demonstrate breadth)</strong> User clicks back to sidebar, opens <strong>"Pricing strategy review"</strong> (in 30 mins). Brief shows insight category <strong>B</strong>: <em>"Pat from infra has been raising your exact concern in 6 prior meetings. They're not on this invite."</em> Inline actions: <em>"Show me Pat's notes"</em> and <em>"Ping Pat for a quick read"</em>.</li>
+  <li><strong>(Demonstrate breadth)</strong> User clicks <strong>"Roadmap sync"</strong> (in 1 hour). Brief shows insight category <strong>E</strong>: <em>"Growth and Trust have both been discussing this feature this month — Growth treats it as retention; Trust treats it as safety. They haven't connected."</em> Inline action: <em>"Show the other thread"</em>.</li>
+</ol>
+
+<p>Three meetings, three insight categories (A, B, E), one full three-beat arc demonstrated end-to-end. Total demo time: ~90 seconds.</p>
+
+<h2><span class="num">16.</span>Out of scope (explicit non-goals)</h2>
+<ul>
+  <li>A sidebar tab, dedicated view, or any other home for the Brief outside the pre-meeting canvas.</li>
+  <li>Editing the Brief manually.</li>
+  <li>Sharing the Brief with attendees.</li>
+  <li>Settings, customization, layout options.</li>
+  <li>A "Brief history" or archive.</li>
+  <li>Proactive surfacing outside the pre-meeting click and the meeting-start notification.</li>
+  <li>Categories C and D (Open loops, What they've been carrying) — strong but not in this demo. Documented in the portfolio for context.</li>
+  <li>Mobile / responsive below 1024px.</li>
+  <li>Empty / loading / error states beyond what the demo flow requires.</li>
+</ul>
+
+<h2><span class="num">17.</span>Acceptance criteria</h2>
+<ul>
+  <li>A Granola daily user, shown the prototype with no introduction, says "oh — Granola does this now?" Not "what's this new feature?" Bar is <em>invisible integration</em>.</li>
+  <li>The Brief composes from data Granola plausibly has — no fabrication that breaks the spell.</li>
+  <li>Every line passes the voice test in Section 11.</li>
+  <li>The Brief adds <em>zero</em> new pieces of chrome to the existing app.</li>
+  <li>The recording notification (Beat 2) is visually indistinguishable from today's Granola recording notification except for the appended "bring up" copy.</li>
+  <li>The pinned bullet (Beat 3) reads as a Granola note bullet, with the lightest possible marking to indicate origin.</li>
+  <li>All three insight categories (A, B, E) appear in the demo, demonstrating the portfolio's breadth — not just one trick.</li>
+</ul>
+
+<h2><span class="num">18.</span>Naming</h2>
+<p>Working name: <strong>Brief.</strong> Direct, Granola-tonal, doesn't oversell. Possible the feature ships with no name at all — it's just what Granola shows you before a meeting. Decide later; don't let naming gate the build.</p>
+
+</div>
+</body>
+</html>

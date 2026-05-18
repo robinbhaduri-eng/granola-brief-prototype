@@ -5,6 +5,8 @@
 
   --oats-border-focus: #b2c24899;
   --oats-border-hairline: #47432a33;
+  --oats-border-solid: #e8e4dc;
+  --oats-border-soft: #f0ece4;
   --oats-fill-accent: #5b6f00;
   --oats-fill-accent-highlight: #788c1526;
   --oats-fill-accent-highlight-strong: #5b6f0033;
@@ -14,16 +16,16 @@
   --oats-fill-input: #ffffff;
   --oats-ink-accent: #788c15;
   --oats-ink-accent-strong: #5b6f00;
-  --oats-ink-primary: #292929;
+  --oats-ink-primary: #1a1814;
   --oats-ink-primary-inverse: #fcfcf8;
-  --oats-ink-secondary: #72726e;
-  --oats-ink-secondary-strong: #4e4d4b;
-  --oats-ink-tertiary: #acada8;
-  --oats-surface: #f7f7f2;
+  --oats-ink-secondary: #5f5b53;
+  --oats-ink-secondary-strong: #3a362f;
+  --oats-ink-tertiary: #908b82;
+  --oats-surface: #faf8f3;
   --oats-surface-elevated: #ffffff;
   --oats-surface-raised: #ffffff;
-  --oats-surface-sunken: #f2f2ec;
-  --oats-surface-tint-accent: #e5eacd;
+  --oats-surface-sunken: #f2efe8;
+  --oats-surface-tint-accent: #eef1ed;
   --oats-surface-tint-neutral: #625a220f;
 
   --color-background-window: var(--oats-surface);
@@ -37,6 +39,8 @@
   --color-foreground-accent: var(--oats-ink-accent);
   --color-foreground-accent-strong: var(--oats-ink-accent-strong);
   --color-border-primary: var(--oats-border-hairline);
+  --color-border-solid: var(--oats-border-solid);
+  --color-border-soft: var(--oats-border-soft);
   --color-highlight-faint: var(--oats-fill-highlight);
   --color-highlight-strong: var(--oats-fill-highlight-strong);
 
@@ -147,4 +151,19 @@ button {
   -webkit-background-clip: text;
   background-clip: text;
   animation: granolaShimmer 1.9s linear infinite;
+}
+
+@keyframes granolaWaveBar {
+  0%,
+  100% {
+    transform: scaleY(0.45);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.granola-wave-bar {
+  transform-origin: center;
+  animation: granolaWaveBar 0.95s ease-in-out infinite;
 }
