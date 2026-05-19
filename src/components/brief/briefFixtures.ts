@@ -4,9 +4,9 @@
  * Insight bodies, the Meeting-1 notification copy, and the Meeting-1 pinned
  * bullet are BRIEF Section 5/15 verbatim. Everything else (titles, rooms,
  * reveal copy, citations, drafts) is shaped to feel like Chris's actual
- * world — co-founder Sam Stephenson, lead investor Nakul Mandan at
- * Lightspeed, and small-startup team meetings. Surnames are only used for
- * publicly-known people; team members are first-name-only.
+ * world — CTO Nikola Otasevic, recruiter Elliot Nash, lead investor Nakul
+ * Mandan at Lightspeed, and small-startup team meetings. Surnames are only
+ * used for publicly-known people; other team members are first-name-only.
  */
 
 export type InsightCategory = "A" | "B" | "E";
@@ -100,14 +100,14 @@ const meeting1: Meeting = {
       // BRIEF Section 15 step 1 — "Show what shifted".
       label: "Show what shifted",
       summary: [
-        "Q3 eng capacity dropped from 2 to 1. Maya pulled onto the Linear-customer fix full-time Monday after the escalation.",
+        "Q3 eng capacity dropped from 2 to 1. Nikola pulled Maya onto the Linear-customer fix Monday after the escalation.",
         "The fix landed Tuesday morning. The regression hasn't come back in 36 hours.",
         "So: 2 engineers and an open fix became 1 engineer and a shipped fix. Nakul will ask about the date.",
       ],
       citations: [
         {
           source: "Eng standup · Monday",
-          detail: "Maya moved to the Linear fix. Q3 capacity now 1.",
+          detail: "Nikola moved Maya to the Linear fix. Q3 capacity now 1.",
         },
         {
           source: "Customer escalation · Tuesday",
@@ -136,11 +136,11 @@ const meeting2: Meeting = {
   minutesAway: 30,
   attendees: [
     {
-      name: "Sam",
-      // Co-founder & CTO Sam Stephenson — first name only is how Chris
-      // would actually see this in a calendar row.
-      line: "co-founder · pushing for the metered tier this quarter",
-      initials: "S",
+      name: "Nikola",
+      // Nikola Otasevic — Granola's CTO. First name only matches how Chris
+      // would actually read his calendar.
+      line: "CTO · pushing back on the metered-tier eng cost",
+      initials: "N",
       tone: "green",
     },
     {
@@ -206,16 +206,10 @@ const meeting3: Meeting = {
   minutesAway: 60,
   attendees: [
     {
-      name: "Sam",
-      line: "co-founder · steering the H2 eng plan",
-      initials: "S",
+      name: "Nikola",
+      line: "CTO · steering the H2 eng plan",
+      initials: "N",
       tone: "green",
-    },
-    {
-      name: "Alex",
-      line: "design · cross-cutting on both threads",
-      initials: "A",
-      tone: "blue",
     },
     {
       name: "Maya",
@@ -224,10 +218,24 @@ const meeting3: Meeting = {
       tone: "amber",
     },
     {
-      name: "Nina",
+      name: "Iris",
       line: "enterprise · scoping data handling for SOC2",
-      initials: "N",
+      initials: "I",
       tone: "purple",
+    },
+    {
+      name: "Alex",
+      line: "design · cross-cutting on both threads",
+      initials: "A",
+      tone: "blue",
+    },
+    {
+      name: "Elliot Nash",
+      // Granola's recruiter — sits in roadmap meetings to map headcount
+      // to plan, not to drive feature direction.
+      line: "recruiter · sizing H2 headcount against the plan",
+      initials: "E",
+      tone: "neutral",
     },
   ],
   insight: {
@@ -249,7 +257,7 @@ const meeting3: Meeting = {
         },
         {
           source: "Enterprise review · last Friday",
-          detail: "Nina scoped the same surface for SOC2-eligible redaction.",
+          detail: "Iris scoped the same surface for SOC2-eligible redaction.",
         },
       ],
       fullNoteTitle: "Enterprise review — Spaces warnings scope",
