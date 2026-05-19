@@ -4,9 +4,10 @@
  * Insight bodies, the Meeting-1 notification copy, and the Meeting-1 pinned
  * bullet are BRIEF Section 5/15 verbatim. Everything else (titles, rooms,
  * reveal copy, citations, drafts) is shaped to feel like Chris's actual
- * world — CTO Nikola Otasevic, recruiter Elliot Nash, lead investor Nakul
- * Mandan at Lightspeed, and small-startup team meetings. Surnames are only
- * used for publicly-known people; other team members are first-name-only.
+ * world — CTO Nikola Otasevic, recruiter Elliot Nash, investor relationship
+ * Michael Mignano at Union Square Ventures, and small-startup team
+ * meetings. Surnames are only used for publicly-known people; other team
+ * members are first-name-only.
  */
 
 export type InsightCategory = "A" | "B" | "E";
@@ -75,57 +76,56 @@ export type Meeting = {
   insight: Insight;
 };
 
-/** Meeting 1 — Catch-up with Nakul (Category A: assumption shift). */
+/** Meeting 1 — Catch-up with Michael (Category A: assumption shift). */
 const meeting1: Meeting = {
-  id: "nakul-1on1",
-  title: "Catch-up with Nakul",
+  id: "michael-1on1",
+  title: "Catch-up with Michael",
   whenLabel: "in 10 min",
   clockLabel: "9:50 AM",
   minutesAway: 10,
   attendees: [
     {
-      name: "Nakul Mandan",
-      // Lead investor (Lightspeed Series A). The "open thread" Chris owes
-      // Nakul a response on is the head-of-sales candidate Nakul put
-      // forward two weeks ago — more specific and Brief-tonal than "Q2
-      // numbers", and the kind of thing a CEO heads-down on launch would
-      // forget about.
-      line: "GP, Lightspeed · last met two weeks ago · waiting on your read of his head-of-sales candidate",
-      initials: "N",
+      name: "Michael Mignano",
+      // Investor relationship now at USV. The "open thread" Chris owes
+      // Michael a response on is the head-of-sales candidate Michael put
+      // forward two weeks ago — Brief-tonal and the kind of thing a CEO
+      // heads-down on launch would forget about.
+      line: "Partner, USV · last met two weeks ago · waiting on your read of his head-of-sales candidate",
+      initials: "M",
       tone: "blue",
     },
   ],
   insight: {
     category: "A",
-    // BRIEF Section 5 Category A example + Section 15 step 1, verbatim.
-    body: "Two assumptions behind your Q3 launch date have shifted this week — eng capacity dropped to 1, and the customer fix landed Tuesday.",
+    // Category A (assumption shift) applied to the actual open thread for
+    // this meeting — the head-of-sales hire Michael put forward. The
+    // pipeline assumptions Chris walked in with two weeks ago have moved.
+    body: "Two assumptions behind the head-of-sales pipeline have shifted this week — Maddie has a competing offer, and your backup signed elsewhere on Tuesday.",
     reveal: {
-      // BRIEF Section 15 step 1 — "Show what shifted".
       label: "Show what shifted",
       summary: [
-        "Q3 eng capacity dropped from 2 to 1. Nikola pulled Maya onto the Linear-customer fix Monday after the escalation.",
-        "The fix landed Tuesday morning. The regression hasn't come back in 36 hours.",
-        "So: 2 engineers and an open fix became 1 engineer and a shipped fix. The date should hold — Nakul will ask what that means for the ARR ramp.",
+        "Maddie — the candidate Michael sent — got a competing offer Monday. She's asking for a 48-hour decision.",
+        "Your backup signed elsewhere Tuesday morning. Elliot caught it in his 1:1 with you.",
+        "Net: the two-candidate pipeline you walked in with two weeks ago is now a one-candidate decision on a 48-hour clock.",
       ],
       citations: [
         {
-          source: "Eng standup · Monday",
-          detail: "Nikola moved Maya to the Linear fix. Q3 capacity now 1.",
+          source: "Recruiter sync · Monday",
+          detail: "Maddie flagged the competing offer to Elliot. Asked for 48 hours.",
         },
         {
-          source: "Customer escalation · Tuesday",
-          detail: "Hotfix shipped. No alarms since.",
+          source: "Elliot 1:1 · Tuesday morning",
+          detail: "Backup signed elsewhere. Came up in passing.",
         },
       ],
-      fullNoteTitle: "Q3 launch — assumption log",
+      fullNoteTitle: "Head-of-sales pipeline — candidate tracker",
     },
     prep: {
       label: "Bring this up",
-      // BRIEF Section 15 step 4, verbatim.
-      noticeCopy: "Recording started — bring up: Q3 launch assumptions",
-      // BRIEF Section 15 step 5, verbatim.
-      pinnedBullet: "Bring up: Q3 launch assumptions (two have shifted this week)",
-      confirmation: "Saved to your Nakul brief.",
+      noticeCopy: "Recording started — bring up: head-of-sales pipeline",
+      pinnedBullet:
+        "Bring up: head-of-sales pipeline — Maddie has a competing offer (48hr), and your backup signed elsewhere",
+      confirmation: "Saved to your Michael brief.",
     },
   },
 };

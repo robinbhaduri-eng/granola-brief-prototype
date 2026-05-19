@@ -16,13 +16,13 @@ Live demo URL: <https://robinbhaduri-eng.github.io/granola-brief-prototype/?demo
 
 ## Opening (5 s)
 
-> *"It's Tuesday morning. You've got Nakul in 10 minutes, a pricing review at 10:10, and the roadmap sync at 10:40. Today, when you click Nakul, Granola shows you 'ready to record.' Here's what we're proposing instead."*
+> *"It's Tuesday morning. You've got Michael in 10 minutes, a pricing review at 10:10, and the roadmap sync at 10:40. Today, when you click Michael, Granola shows you 'ready to record.' Here's what we're proposing instead."*
 
 Open the URL. The **"Meeting detected"** Chrome notification appears top-right within a beat — that's the trigger for the full arc.
 
 ---
 
-## Meeting 1 · Catch-up with Nakul *(the full arc)*
+## Meeting 1 · Catch-up with Michael *(the full arc)*
 
 ### Beat 1 — The Brief itself (20 s)
 
@@ -30,37 +30,37 @@ Point at the canvas, don't click yet.
 
 > *"This is the meeting canvas. But instead of an empty 'ready to record' state, Granola hands you one thing worth knowing. Two parts.*
 >
-> *The room at the top — Nakul Mandan, GP at Lightspeed, last met two weeks ago — and the open thread: **you owe him a reaction to the head-of-sales candidate he sent.** Granola knows that because it heard him send the intro on the last call and watched it never come back through your reply.*
+> *The room at the top — Michael Mignano, Partner at USV, last met two weeks ago — and the open thread: **you owe him a reaction to the head-of-sales candidate he sent.** Granola knows that because it heard him send the intro on the last call and watched it never come back through your reply.*
 >
-> *Then below — **worth knowing** — Granola noticed that two assumptions behind your Q3 launch date have shifted this week. Eng capacity dropped to 1, and the customer fix landed Tuesday."*
+> *Then below — **worth knowing** — Granola noticed that **two assumptions behind that head-of-sales pipeline have shifted this week.** Maddie has a competing offer. Your backup signed elsewhere Tuesday. You're walking in thinking you have two finalists — you don't."*
 
 ### Beat 2 — Reveal (15 s)
 
 Click **Show what shifted**. Three lines unfold inline with citations.
 
-> *"Three lines, cited to the actual meetings the assumption came from. Eng standup Monday — **Nikola pulled Maya off Q3 onto the Linear customer fix.** Customer escalation Tuesday — the fix shipped. Net effect: the date should hold, but Nakul will ask what that means for the ARR ramp."*
+> *"Three lines, cited to the actual meetings the data came from. **Recruiter sync Monday — Maddie called Elliot about the competing offer, asked for 48 hours.** Elliot's 1:1 with you Tuesday morning — your backup signed elsewhere, came up in passing and you almost missed it. **Net: the two-candidate pipeline you walked in two weeks ago is now a one-candidate decision on a 48-hour clock.**"*
 
-(If asked: clicking `Open full note →` would take you to the assumption log — out of scope to navigate during the demo.)
+(If asked: clicking `Open full note →` would take you to the candidate tracker — out of scope to navigate during the demo.)
 
 ### Beat 3 — The full arc (25 s) · the wow moment
 
-> *"OK, I want to bring this up with Nakul. One click."*
+> *"OK, I want to bring this up with Michael. One click."*
 
-Click **Bring this up**. Inline confirmation: `✓ Saved to your Nakul brief.` Undo is there for 4 s.
+Click **Bring this up**. Inline confirmation: `✓ Saved to your Michael brief.` Undo is there for 4 s.
 
 > *"This is where it stops being a passive sidebar. That one click follows me into the meeting."*
 
 Click **Take Notes** on the Chrome notification.
 
-> *"…Recording started — bring up: Q3 launch assumptions. Granola's existing recording notification just carried the prep forward. And when the note opens —"*
+> *"…Recording started — bring up: head-of-sales pipeline. Granola's existing recording notification just carried the prep forward. And when the note opens —"*
 
 The meeting note view appears with the pinned bullet at the top.
 
-> *"— it's already at the top of the agenda. Subtle olive mark on the left, no badge — reads like a normal note bullet. Ready to reference mid-conversation. **One click, three places it shows up.**"*
+> *"— it's already at the top of the agenda. Subtle olive mark on the left, no badge — reads like a normal note bullet. The full thread: **Maddie has a competing offer on a 48-hour clock, and the backup signed elsewhere.** Ready to reference mid-conversation. **One click, three places it shows up.**"*
 
 Optional: point at the agenda items below the pinned bullet —
 
-> *"And the agenda itself is investor-shaped: head-of-sales candidate read, Q3 launch status, ARR ramp + round timing, anything Nakul is hearing."*
+> *"And the rest of the agenda is investor-shaped: Q3 launch status, ARR ramp + round timing, anything Michael is hearing."*
 
 ---
 

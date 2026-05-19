@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>DEMO</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="brief-demo-script">Brief — Demo Script</h1>
+<p>A ~90-second walkthrough of the Brief prototype for Chris. Live demo
+URL: <a
+href="https://robinbhaduri-eng.github.io/granola-brief-prototype/?demo=brief"
+class="uri">https://robinbhaduri-eng.github.io/granola-brief-prototype/?demo=brief</a></p>
+<hr />
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+<li><strong>Hard-reload</strong> (Cmd+Shift+R) so the “Meeting detected”
+Chrome notification animates in cleanly.</li>
+<li><strong>Resize browser to ≥ 1024px</strong> so the sidebar shows (it
+intentionally hides below 1024px — per BRIEF Section 16 “responsive
+below 1024px is out of scope”).</li>
+<li>The demo runs in the order <strong>Meeting 1 → 2 → 3</strong> to
+deliver the full arc on Meeting 1 first, then demonstrate portfolio
+breadth on Meetings 2 and 3.</li>
+<li>If you ever need to reset, just hit the URL again.</li>
+</ul>
+<hr />
+<h2 id="opening-5-s">Opening (5 s)</h2>
+<blockquote>
+<p><em>“It’s Tuesday morning. You’ve got Michael in 10 minutes, a
+pricing review at 10:10, and the roadmap sync at 10:40. Today, when you
+click Michael, Granola shows you ‘ready to record.’ Here’s what we’re
+proposing instead.”</em></p>
+</blockquote>
+<p>Open the URL. The <strong>“Meeting detected”</strong> Chrome
+notification appears top-right within a beat — that’s the trigger for
+the full arc.</p>
+<hr />
+<h2 id="meeting-1-catch-up-with-michael-the-full-arc">Meeting 1 ·
+Catch-up with Michael <em>(the full arc)</em></h2>
+<h3 id="beat-1-the-brief-itself-20-s">Beat 1 — The Brief itself (20
+s)</h3>
+<p>Point at the canvas, don’t click yet.</p>
+<blockquote>
+<p><em>“This is the meeting canvas. But instead of an empty ‘ready to
+record’ state, Granola hands you one thing worth knowing. Two
+parts.</em></p>
+<p><em>The room at the top — Michael Mignano, Partner at USV, last met
+two weeks ago — and the open thread: <strong>you owe him a reaction to
+the head-of-sales candidate he sent.</strong> Granola knows that because
+it heard him send the intro on the last call and watched it never come
+back through your reply.</em></p>
+<p><em>Then below — <strong>worth knowing</strong> — Granola noticed
+that <strong>two assumptions behind that head-of-sales pipeline have
+shifted this week.</strong> Maddie has a competing offer. Your backup
+signed elsewhere Tuesday. You’re walking in thinking you have two
+finalists — you don’t.”</em></p>
+</blockquote>
+<h3 id="beat-2-reveal-15-s">Beat 2 — Reveal (15 s)</h3>
+<p>Click <strong>Show what shifted</strong>. Three lines unfold inline
+with citations.</p>
+<blockquote>
+<p><em>“Three lines, cited to the actual meetings the data came from.
+<strong>Recruiter sync Monday — Maddie called Elliot about the competing
+offer, asked for 48 hours.</strong> Elliot’s 1:1 with you Tuesday
+morning — your backup signed elsewhere, came up in passing and you
+almost missed it. <strong>Net: the two-candidate pipeline you walked in
+two weeks ago is now a one-candidate decision on a 48-hour
+clock.</strong>”</em></p>
+</blockquote>
+<p>(If asked: clicking <code>Open full note →</code> would take you to
+the candidate tracker — out of scope to navigate during the demo.)</p>
+<h3 id="beat-3-the-full-arc-25-s-the-wow-moment">Beat 3 — The full arc
+(25 s) · the wow moment</h3>
+<blockquote>
+<p><em>“OK, I want to bring this up with Michael. One click.”</em></p>
+</blockquote>
+<p>Click <strong>Bring this up</strong>. Inline confirmation:
+<code>✓ Saved to your Michael brief.</code> Undo is there for 4 s.</p>
+<blockquote>
+<p><em>“This is where it stops being a passive sidebar. That one click
+follows me into the meeting.”</em></p>
+</blockquote>
+<p>Click <strong>Take Notes</strong> on the Chrome notification.</p>
+<blockquote>
+<p><em>“…Recording started — bring up: head-of-sales pipeline. Granola’s
+existing recording notification just carried the prep forward. And when
+the note opens —”</em></p>
+</blockquote>
+<p>The meeting note view appears with the pinned bullet at the top.</p>
+<blockquote>
+<p><em>“— it’s already at the top of the agenda. Subtle olive mark on
+the left, no badge — reads like a normal note bullet. The full thread:
+<strong>Maddie has a competing offer on a 48-hour clock, and the backup
+signed elsewhere.</strong> Ready to reference mid-conversation.
+<strong>One click, three places it shows up.</strong>”</em></p>
+</blockquote>
+<p>Optional: point at the agenda items below the pinned bullet —</p>
+<blockquote>
+<p><em>“And the rest of the agenda is investor-shaped: Q3 launch status,
+ARR ramp + round timing, anything Michael is hearing.”</em></p>
+</blockquote>
+<hr />
+<h2
+id="meeting-2-pricing-v3-review-demonstrate-breadth-category-b">Meeting
+2 · Pricing v3 review <em>(demonstrate breadth — Category B)</em></h2>
+<p>Click <strong>← Back to brief</strong>, then in the sidebar click
+<strong>Pricing v3 review</strong> (or in the URL bar append
+<code>&amp;meeting=pricing-v3-review</code>).</p>
+<blockquote>
+<p><em>“Different meeting, different category. Pricing review in 30
+minutes.</em></p>
+<p><em>Look at the top of the room — <strong>Nikola and Sam are both
+there, pushing from different angles.</strong> Your CTO is worried about
+the eng cost of metering. Your co-founder Sam is worried about how it
+reads to your indie users — Granola’s brand grew on indie + SMB and a
+metered tier could feel enterprise-only. Maya ran the willingness-to-pay
+test, Theo’s drafting the legal review.</em></p>
+<p><em>Granola knows all of that — and yet the Brief surfaces none of
+them as the insight. The bigger thing is that <strong>Pat from infra has
+been raising your exact concern in 6 prior meetings, and Pat’s not on
+this invite.</strong>”</em></p>
+</blockquote>
+<p>Click <strong>Ping Pat for a quick read</strong>. Modal opens with a
+drafted message.</p>
+<blockquote>
+<p><em>“Two actions. I can bring it up myself. Or, since Pat’s not in
+the room, I can ping Pat for a quick read. <strong>Drafts. Never
+sends.</strong> I read it, edit if I want, copy it out manually. The
+only Brief action that touches the outside world, and even then only as
+a draft.”</em></p>
+</blockquote>
+<p>Close modal.</p>
+<hr />
+<h2
+id="meeting-3-h2-roadmap-sync-demonstrate-breadth-category-e">Meeting 3
+· H2 roadmap sync <em>(demonstrate breadth — Category E)</em></h2>
+<p>Click <strong>← Back</strong> (or
+<code>&amp;meeting=h2-roadmap-sync</code> in URL).</p>
+<blockquote>
+<p><em>“Different category again. Roadmap sync in an hour. Five people
+from across the org are in the room — Nikola steering eng, Sam pushing
+for fewer themes, Maya pushing the H2 retention bet, Iris scoping data
+handling for SOC2, Alex cross-cutting on design. And <strong>Elliot,
+your recruiter, is waiting on your feedback on the PM finalists</strong>
+— that’s three days stale.</em></p>
+<p><em>But the insight Granola surfaces is none of those. It’s that
+<strong>Growth and Trust have both been discussing the Spaces warnings
+flow this month, from opposite framings. Retention vs safety. They
+haven’t connected.</strong> Today’s sync is the first room with people
+from both.”</em></p>
+</blockquote>
+<hr />
+<h2 id="close-5-s">Close (5 s)</h2>
+<blockquote>
+<p><em>“Three meetings, three insight categories, one full arc
+end-to-end. The bet is <strong>quiet over comprehensive.</strong> Most
+meetings won’t have a hero insight — and that’s the point. When one
+appears — like the Pat thing today — it lands.”</em></p>
+</blockquote>
+<hr />
+<h2 id="demo-time-budget">Demo time budget</h2>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opening</td>
+<td>5 s</td>
+</tr>
+<tr>
+<td>Meeting 1 Beat 1 (Brief)</td>
+<td>20 s</td>
+</tr>
+<tr>
+<td>Meeting 1 Beat 2 (Reveal)</td>
+<td>15 s</td>
+</tr>
+<tr>
+<td>Meeting 1 Beat 3 (the arc)</td>
+<td>25 s</td>
+</tr>
+<tr>
+<td>Meeting 2 (Pat + Ping)</td>
+<td>20 s</td>
+</tr>
+<tr>
+<td>Meeting 3 (Growth/Trust)</td>
+<td>15 s</td>
+</tr>
+<tr>
+<td>Close</td>
+<td>5 s</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>~1 min 45 s</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="anticipated-questions-back-pocket-answers">Anticipated questions
++ back-pocket answers</h2>
+<p><strong>Q: How does Granola pick the “one thing”?</strong> &gt; The
+portfolio is five categories (Section 5 of the brief — A/B/C/D/E). Per
+meeting Granola ranks them by how strongly the data supports a real
+surprise, and picks the top one. If nothing clears the bar, the Brief is
+just “the room” — which is the deliberate quiet-over-comprehensive
+design.</p>
+<p><strong>Q: What about Pat — would they be offended you didn’t invite
+them?</strong> &gt; The action is <em>Ping Pat for a quick read</em> — a
+draft, never sent. You decide whether to send. It’s Pat-aware, not
+Pat-bypassing.</p>
+<p><strong>Q: Is this just chat with a different UI?</strong> &gt;
+No. Chat is the user asking. The Brief is Granola surfacing one thing —
+unprompted, at the moment it matters. It’s the inverse direction.</p>
+<p><strong>Q: Why not three modules / a sidebar tab?</strong> &gt;
+Section 10 of the brief — modules make the user <em>look for</em> the
+org intel Granola has. The Brief flips that: one load-bearing thing at
+the moment the user needs it, then it gets out of the way.</p>
+<p><strong>Q: What happens if Granola is wrong?</strong> &gt; The
+micro-actions are designed for cheap retreat. <em>Bring this up</em> is
+undoable. The pinned bullet is dismissable on hover. <em>Ping Pat</em>
+never sends. The only cost of a bad surface is two seconds of
+attention.</p>
+<p><strong>Q: Why does the recording notification say “Chrome”?</strong>
+&gt; That’s the existing Granola notification — it surfaces when Granola
+detects a meeting in your browser. The Brief reuses it (Beat 2 of the
+arc), only the copy carries forward the prep — see Section 12 of the
+brief: “visually indistinguishable from today’s Granola recording
+notification except for the appended bring-up copy.”</p>
+<hr />
+<h2 id="deep-links-skip-the-click-around-in-a-re-run">Deep links (skip
+the click-around in a re-run)</h2>
+<ul>
+<li>Meeting 1 (default): <code>?demo=brief</code></li>
+<li>Meeting 2:
+<code>?demo=brief&amp;meeting=pricing-v3-review</code></li>
+<li>Meeting 3: <code>?demo=brief&amp;meeting=h2-roadmap-sync</code></li>
+</ul>
+<hr />
+<h2 id="whats-deliberately-not-in-this-demo">What’s deliberately not in
+this demo</h2>
+<ul>
+<li>Category C (<em>what they’ve been carrying</em>) and D (<em>open
+loops between you two</em>) — in the portfolio for context, but the
+three meetings cover A, B, and E to demonstrate breadth (per BRIEF
+Section 17 acceptance criteria).</li>
+<li>Mobile / responsive below 1024 px.</li>
+<li>Empty-Brief state — there is no “quiet meeting” in this demo even
+though the design bet calls for one. Worth flagging to Chris that “most
+meetings will be quiet” is a bet to test; the demo intentionally
+over-indexes on loaded meetings to demonstrate the portfolio.</li>
+<li>Any new chrome in the existing Granola app. Per Section 17: “The
+Brief adds zero new pieces of chrome to the existing app.”</li>
+</ul>
+</body>
+</html>
