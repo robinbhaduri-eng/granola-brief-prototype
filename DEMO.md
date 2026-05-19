@@ -4,15 +4,21 @@
 
 ---
 
-## Setup
+## Setup *(do before Chris joins)*
 
 - Cmd+Shift+R · window ≥ 1024px · land on Michael's brief
 - Three meetings teed up: Michael (10 min) · Pricing (30 min) · Roadmap (1 hr)
 
-## Opening — 5s
+## Lead with the problem — 10s
 
-- Today: click an upcoming meeting → empty "ready to record"
-- **We replace that with one thing worth knowing**
+*Say this before clicking anything.*
+
+> *"Granola sits in every meeting in your org. That's the most valuable knowledge graph any tool has. But the user can't access that intel at the moment it matters most — the seconds before they walk in. **Brief is what closes that loop.**"*
+
+Backing it up if Chris pushes for specifics:
+
+- Today, those seconds = the "ready to record" empty state. Useful for recording. Useless for prep.
+- Brief replaces that empty state with **one thing worth knowing**, drawn from the org's transcripts, carriable in with one click.
 
 ## Beat 1 · The Brief — 15s
 
@@ -51,10 +57,11 @@
 - Six in the room — Elliot is waiting on PM finalist feedback (another open loop)
 - Insight: **Growth and Trust have both been scoping Spaces warnings in parallel — neither knows.** Today's sync is the first room with both.
 
-## Close — 5s
+## Close — 10s
 
 - 3 meetings · 3 categories (A / B / E) · 1 full arc end-to-end
 - **Quiet over comprehensive.** Most meetings won't surface. When one does — it lands.
+- **Callback to the opening**: *"Granola was already in those rooms. Brief is what closes the loop — you walk in with what it heard."*
 
 ---
 
@@ -88,4 +95,4 @@
 - Pricing: `?demo=brief&meeting=pricing-v3-review`
 - Roadmap: `?demo=brief&meeting=h2-roadmap-sync`
 
-**Time budget:** ~1 min 40s walking through end-to-end · trade-offs + Qs are for when Chris drills in.
+**Time budget:** ~1 min 45s end-to-end (10s problem + 90s walkthrough + 10s close). Trade-offs + Qs are for when Chris drills in.
